@@ -69,11 +69,16 @@
             "type": "shell",  // 任务执行的是shell命令，也可以是
             "command": "g++", // 命令是g++
             "args": [
-                "'-Wall'",
-                "'-std=c++17'",  //使用c++17标准编译
-                "'${file}'", //当前文件名
-                "-o", //对象名，不进行编译优化
-                "'${fileBasenameNoExtension}.exe'",  //当前文件名（去掉扩展名）
+                // "'-Wall'",
+                // "'-std=c++17'",  //使用c++17标准编译
+                // "'${file}'", //当前文件名
+                // "-o", //对象名，不进行编译优化
+                // "'${fileBasenameNoExtension}.exe'",  //当前文件名（去掉扩展名）
+                "-m32",
+                "-g", 
+                "${file}", 
+                "-o", 
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
           // 所以以上部分，就是在shell中执行（假设文件名为filename.cpp）
           // g++ filename.cpp -o filename.exe
@@ -87,6 +92,14 @@
             "problemMatcher": [
                 "$gcc" // 使用gcc捕获错误
             ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
         }
     ]
 }
