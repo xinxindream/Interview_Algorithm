@@ -87,7 +87,7 @@
             "stopAtEntry": false, // 选为true则会在打开控制台后停滞，暂时不执行程序
             "cwd": "${workspaceFolder}", // 当前工作路径：当前文件所在的工作空间
             "environment": [],
-            "externalConsole": true,  // 是否使用外部控制台，选false的话，我的vscode会出现错误
+            "externalConsole": true,  // 是否使用外部控制台
             "MIMode": "gdb",
             "miDebuggerPath": "D:\\DevTools\\MinGW\\mingw810\\bin\\gdb.exe",
             "setupCommands": [
